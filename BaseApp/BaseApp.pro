@@ -24,10 +24,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
-    socketprocess.cpp
+    socketprocess.cpp \
+    BaseWindow.cpp
 
-HEADERS  += mainwindow.h \
-    socketprocess.h
+HEADERS  += \
+    socketprocess.h \
+    BaseWindow.h
 
 FORMS    += mainwindow.ui
+
+target.files = BaseApp
+target.path = /home/debian
+INSTALLS = target

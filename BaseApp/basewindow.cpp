@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+#include "BaseWindow.h"
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -10,5 +10,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
+    emit finished();
     delete ui;
 }

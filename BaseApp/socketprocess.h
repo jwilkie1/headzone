@@ -3,6 +3,8 @@
 
 #include <QObject>
 #include <QUdpSocket>
+#include <QTcpServer>
+#include <QTcpSocket>
 
 class SocketProcess : public QObject
 {
@@ -19,11 +21,16 @@ public slots:
 
 private slots:
     void readPendingUdp();
+    void newTcpConnection();
+    void readClientSock();
 
 private:
-    void processUdpMsg(QString msg);
+    void processUdpMsg(QString msg, QHostAddress sender);
 
     QUdpSocket* udpSocket;
+    QTcpServer* tcpServer;
+    QTcpSocket* tcpSocket;
+    QString hpId;
 };
 
 #endif // SOCKETPROCESS_H

@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+#include "BaseWindow.h"
 #include "socketprocess.h"
 #include <QApplication>
 #include <QThread>
@@ -16,6 +16,7 @@ int main(int argc, char *argv[])
     socketThread.start();
 
     MainWindow w;
+    QObject::connect(&w, SIGNAL(finished()), &socketThread, SLOT(quit()));
     w.show();
 
     return a.exec();

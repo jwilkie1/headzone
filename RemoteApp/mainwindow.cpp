@@ -10,5 +10,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
+    emit finished();
     delete ui;
 }

@@ -1,5 +1,5 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef BASEWINDOW_H
+#define BASEWINDOW_H
 
 #include <QMainWindow>
 
@@ -15,8 +15,11 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+signals:
+    void finished();
+
 private:
     Ui::MainWindow *ui;
 };
 
-#endif // MAINWINDOW_H
+#endif // BASEWINDOW_H
