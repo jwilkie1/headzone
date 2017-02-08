@@ -1,4 +1,4 @@
-#include "BaseWindow.h"
+#include "basewindow.h"
 #include "socketprocess.h"
 #include <QApplication>
 #include <QThread>

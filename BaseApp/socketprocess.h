@@ -31,6 +31,7 @@ private:
     QTcpServer* tcpServer;
     QTcpSocket* tcpSocket;
     QString hpId;
+    QHostAddress currentClientAddress;
 };
 
 #endif // SOCKETPROCESS_H

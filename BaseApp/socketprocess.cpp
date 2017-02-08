@@ -1,4 +1,5 @@
 #include "socketprocess.h"
+#include <QStringList>
 
 SocketProcess::SocketProcess(QObject *parent) : QObject(parent)
 {
@@ -30,8 +31,14 @@ void SocketProcess::readPendingUdp()
 
         udpSocket->readDatagram(datagram.data(), datagram.size(),
                               &sender, &senderPort);
-        qDebug() << "new udp message from" << sender.toString() << senderPort;
-        processUdpMsg(QString(datagram),sender);
+        qDebug() << "new udp message from" << sender.toString() << senderPort << currentClientAddress;
+        if (sender != currentClientAddress) {
+            currentClientAddress = sender;
+            processUdpMsg(QString(datagram),sender);
+        }
+        else {
+            qDebug() << "ignoring udp message, client is already active";
+        }
     }
 }
 

@@ -25,11 +25,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp\
     socketprocess.cpp \
-    BaseWindow.cpp
+    basewindow.cpp
 
 HEADERS  += \
     socketprocess.h \
-    BaseWindow.h
+    basewindow.h
 
 FORMS    += mainwindow.ui
 
